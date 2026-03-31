@@ -9,7 +9,12 @@ const Home = () =>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti,
         ratione accusantium. Consequuntur fugiat sed culpa quis quidem quod
         consectetur, ex quos ipsam alias asperiores soluta ducimus eius
-        repellat, accusamus quo?
+        repellat, accusamus quo?git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:QwazarDan/13hEcomm.git
+git push -u origin main
       </p>
     </div>
   );
