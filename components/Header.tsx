@@ -1,7 +1,9 @@
-import React from "react";
 import Container from "./Container";
 import Logo from "./Logo";
 import HeaderMenu from "./HeaderMenu";
+import SearchBar from "./SearchBar";
+import CartIcon from "./CartIcon";
+import FavoriteButton from "./FavoriteButton";
 
 const Header = () => {
   return (
@@ -9,7 +11,11 @@ const Header = () => {
       <Container className="flex items-center justify-between">
         <Logo />
         <HeaderMenu />
-        <div>Others</div>
+        <div className="w-auto md:w-1/3 flex items-center justify-end gap-5">
+          <SearchBar />
+          <CartIcon />
+          <FavoriteButton />
+        </div>
       </Container>
     </header>
   );
