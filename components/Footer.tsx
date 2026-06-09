@@ -5,6 +5,9 @@ import SocialMedia from "./SocialMedia";
 import { SubText, SubTitle } from "./ui/text";
 import Link from "next/link";
 import { quickLinksData } from "@/constants/data";
+import { categoriesData } from "@/constants/data";
+import { Input } from "./ui/input";
+import { Button } from "./ui/button";
 
 const Footer = () => {
   return (
@@ -26,16 +29,54 @@ const Footer = () => {
           </div>
           <div>
             <SubTitle>Quick Links</SubTitle>
-            <ul className = "space-y-3 mt-4">
+            <ul className="space-y-3 mt-4">
               {quickLinksData?.map((item) => (
                 <li key={item?.title}>
-                  <Link href={item?.href}>{item?.title}</Link>
+                  <Link
+                    href={item?.href}
+                    className="hover:text-shop_light_green hoverEffect font-medium"
+                  >
+                    {item?.title}
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
-          <div></div>
-          <div></div>
+          <div>
+            <SubTitle>Categories</SubTitle>
+            <ul className="space-y-3 mt-4">
+              {categoriesData?.map((item) => (
+                <li key={item?.title}>
+                  <Link
+                    href={`category/${item?.href}`}
+                    className="hover:text-shop_light_green hoverEffect font-medium"
+                  >
+                    {item?.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="space-y-4">
+            <SubTitle>Newsletter</SubTitle>
+            <SubText>
+              Subscribe to our newsletter to get the latest news and updates.
+            </SubText>
+            <form className="space-y-3">
+              <Input
+                placeholder="Enter your email"
+                type="email"
+                required
+              ></Input>
+              <Button className="w-full">Subscribe</Button>
+            </form>
+          </div>
+        </div>
+        <div className="py-8 border-t text-center text-sm text-gray-600">
+          <div>
+            &copy; {new Date().getFullYear()}
+            <Logo className="text-sm" />. All rights reserved.
+          </div>
         </div>
       </Container>
     </footer>
