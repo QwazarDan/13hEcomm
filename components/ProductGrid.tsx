@@ -1,16 +1,18 @@
 "use client";
-
+import { productType } from "@/constants/data";
 import { useState } from "react";
 import HomeTabBar from "./HomeTabBar";
 
 const ProductGrid = () => {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState<
+    { _id: string; name: string; price: number }[]
+  >([]);
   const [loading, setLoading] = useState(false);
-  const [selectedTab, setSelectTab] = useState("");
+  const [selectedTab, setSelectedTab] = useState(productType[0]?.title || "");
 
   return (
     <div>
-      <HomeTabBar />
+      <HomeTabBar selectedTab={selectedTab} onTabSelect={setSelectedTab} />
     </div>
   );
 };
